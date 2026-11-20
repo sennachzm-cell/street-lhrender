@@ -1,0 +1,15 @@
+{
+  "app": "Street Admin",
+  "release": "Identidade visual LH STREET + estabilidade da API",
+  "build": "20261119-lhstreet2",
+  "features": [
+    "QR Code Pix e Copia e Cola",
+    "Aba Equipe",
+    "Layout mobile",
+    "Atualização da interface pelo servidor",
+    "Identidade grafite / roxo / textura real LH STREET",
+    "Logo original e ícones PWA atualizados",
+    "Configuração pública de cadastro e acessibilidade de modais",
+    "Gateway local usa frontend local e API Render"
+  ]
+}

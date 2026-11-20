@@ -1,0 +1,10 @@
+/* Atualizações de interface servidas pelo PC. Nunca recarrega carrinho ou formulário em edição. */
+(function(){'use strict';const BUILD='20261115-pix-equipe-mobile1';let dirty=false,pending=false,checking=false,reloading=false,banner;
+ function safe(){return !dirty&&typeof cart!=='undefined'&&cart.size===0&&!checkoutLock&&!syncPromise&&!document.querySelector('.modal-backdrop.open')&&!document.querySelector('form button[type="submit"]:disabled');}
+ function show(){if(banner)return;banner=document.createElement('div');banner.className='release-notice';banner.setAttribute('role','status');const t=document.createElement('span');t.textContent='Atualização disponível. Conclua a operação em andamento.';const b=document.createElement('button');b.type='button';b.textContent='Aplicar atualização';b.onclick=()=>{if(!safe())return toast('Conclua a venda ou saia do formulário antes de atualizar.');reload();};banner.append(t,b);document.body.appendChild(banner);}
+ async function reload(){if(reloading||!safe())return;reloading=true;try{if('serviceWorker' in navigator){const reg=await navigator.serviceWorker.getRegistration();if(reg)await reg.update();}}catch{}location.reload();}
+ async function check(){if(checking||document.visibilityState==='hidden'||!navigator.onLine)return;checking=true;try{const response=await fetch('/versao-street-admin.json?_='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(5000)});if(!response.ok)return;const version=await response.json();if(typeof version.build==='string'&&version.build!==BUILD){pending=true;show();if(safe())await reload();}}catch{}finally{checking=false;}}
+ document.addEventListener('input',e=>{if(e.target.closest('form'))dirty=true;});document.addEventListener('change',e=>{if(e.target.closest('form'))dirty=true;});
+ window.StreetUpdate={formSaved(){dirty=false;},navigated(){dirty=false;},canReload:safe,check,build:BUILD};
+ window.addEventListener('online',check);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')check();});setInterval(check,60000);setTimeout(check,5000);
+})();

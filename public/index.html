@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0e0e12">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="LH STREET">
+<meta name="description" content="Caixa, estoque, lucro e salários da loja com sincronização privada entre iPhone e PC">
+<link rel="manifest" href="/manifest.json?v=20261119lh">
+<link rel="icon" href="/icon-192.png?v=20261119lh" type="image/png">
+<link rel="apple-touch-icon" href="/icon-192.png?v=20261119lh">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=20261109violet1">
+<link rel="stylesheet" href="/reference-violet.css?v=20261109reference2">
+<link rel="stylesheet" href="/studio-signature.css?v=20261109logo3">
+<link rel="stylesheet" href="/streetadmin-brand.css?v=20261109brand4">
+<link rel="stylesheet" href="/cash-update.css?v=20261111cash1">
+<link rel="stylesheet" href="/studio-shell-v2.css?v=20261115-pix-equipe-mobile1">
+<title>STREET ADMIN — Início</title>
+<link rel="stylesheet" href="/pix-mobile.css?v=20261115-pix-equipe-mobile1">
+<link rel="stylesheet" href="/lh-street-identity.css?v=20261119" />
+</head>
+<body>
+<section id="auth-screen" class="auth-screen" data-mode="login" aria-label="Acessar conta da loja">
+  <div class="auth-showcase">
+    <div class="showcase-brand"><div class="brand-mark shop-logo-slot" aria-label="Street Admin"><span class="logo-fallback"><img class="streetadmin-default-mark" src="/lh-street-mark.webp" alt="" decoding="async"></span></div><strong>LH STREET <span class="brand-admin">/ ADMIN</span></strong></div>
+    <div class="showcase-copy">
+      <span class="showcase-kicker"><span class="showcase-kicker-dot"></span> LH STREET · GESTÃO INTEGRADA</span>
+      <h1>O controle da sua loja.<br><span>No seu ritmo.</span></h1>
+      <p>Caixa, produtos, estoque e resultados. Sua operação em um único lugar, com uma identidade que é só sua.</p>
+      <div class="showcase-line">GESTÃO COMERCIAL <span aria-hidden="true">/</span> OPERAÇÃO CENTRALIZADA</div>
+    </div>
+    <div class="showcase-art showcase-art-v2 street-identity-hero" aria-hidden="true">
+      <img src="/lh-street-logo.webp" alt="" loading="lazy" decoding="async">
+      <span class="street-hero-caption">LH STREET / CONTROLE &amp; OPERAÇÕES</span>
+    </div>
+    <span class="showcase-footer">© <span id="auth-year">2026</span> Street Admin · Seu painel de gestão</span>
+  </div>
+  <div class="auth-panel">
+    <div class="auth-panel-top">
+      <div class="auth-mobile-brand"><span class="brand-mark shop-logo-slot" aria-label="Street Admin"><span class="logo-fallback"><img class="streetadmin-default-mark" src="/lh-street-mark.webp" alt="" decoding="async"></span></span><strong>LH STREET <span class="brand-admin">/ ADMIN</span></strong></div>
+      <button type="button" id="auth-theme-toggle" class="theme-toggle auth-theme-toggle" aria-label="Ativar modo claro" title="Alternar tema"><span class="theme-icon" id="auth-theme-icon" aria-hidden="true"></span></button>
+    </div>
+    <div class="auth-card">
+      <span class="auth-kicker">PAINEL PRIVADO / LH STREET</span>
+      <h1 id="auth-heading">Bem-vindo ao seu espaço<span class="brand-dot">.</span></h1>
+      <p class="auth-subtitle">Tudo pronto para continuar cuidando da sua loja.</p>
+      <form id="auth-form">
+        <div id="auth-register-fields" hidden><label for="auth-shop">Nome da loja</label><input id="auth-shop" name="shopName" autocomplete="organization" placeholder="Como sua loja se chama?" maxlength="100"></div>
+        <label for="auth-email">E-mail da conta</label><input id="auth-email" name="email" type="email" autocomplete="username" required placeholder="seu@email.com">
+        <label for="auth-password">Senha</label>
+        <div class="auth-password-wrap"><input id="auth-password" name="password" type="password" required minlength="10" autocomplete="current-password" placeholder="Digite sua senha"><button type="button" id="auth-password-toggle" aria-label="Mostrar senha" aria-pressed="false" class="auth-eye-btn">Mostrar</button></div>
+        <div id="auth-error" class="auth-error" role="alert" hidden></div>
+        <button id="auth-submit" class="primary" type="submit">Entrar na plataforma <span aria-hidden="true">↗</span></button>
+      </form>
+      <div class="auth-divider"><span>ou</span></div>
+      <div class="auth-signup"><span id="auth-switch-label">Precisa cadastrar sua loja?</span><button type="button" id="auth-switch" class="auth-switch">Criar uma nova loja</button></div>
+      <p class="auth-note">Sua conta é protegida por senha. Para sincronizar entre dispositivos, conecte-se ao servidor da sua loja.</p>
+    </div>
+    <span class="auth-panel-bottom">Gestão simples, com a identidade da sua loja </span>
+  </div>
+</section>
+<div class="app-shell">
+  <div class="sidebar-shade" id="sidebar-shade" aria-hidden="true"></div>
+  <aside class="sidebar" id="sidebar" aria-label="Menu principal">
+    <div class="brand"><div class="brand-mark shop-logo-slot" aria-label="Street Admin"><span class="logo-fallback"><img class="streetadmin-default-mark" src="/lh-street-mark.webp" alt="" decoding="async"></span></div><div><strong>LH STREET <span class="brand-admin">/ ADMIN</span></strong><small><span id="shop-title">CONTROLE DA LOJA</span></small></div><button type="button" class="sidebar-close" id="sidebar-close" aria-label="Fechar menu">×</button></div>
+    <div class="nav-section-label">GERENCIAMENTO</div>
+    <nav id="main-nav">
+      <button type="button" class="nav-item active" data-page="home"><svg class="nav-glyph" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="m3 10 9-7 9 7"/><path d="M5 9v11h14V9"/><path d="M9 20v-7h6v7"/></svg>Início</button>
+      <button type="button" class="nav-item" data-page="dashboard"><svg class="nav-glyph" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>Visão geral</button>
+      <button type="button" class="nav-item" data-page="register"><svg class="nav-glyph" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M7 15h4m5 0h2"/></svg>Caixa</button>
+      <button type="button" class="nav-item" data-page="sales"><svg class="nav-glyph" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="m4 18 6-6 4 4 6-7"/><path d="M15 9h5v5"/></svg>Vendas realizadas</button>
+      <button type="button" class="nav-item" data-page="products"><svg class="nav-glyph" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M12 3 3 8v9l9 5 9-5V8l-9-5Z"/><path d="m3 8 9 5 9-5M12 13v9"/></svg>Produtos</button>
+            <button type="button" class="nav-item" data-page="customers"><svg class="nav-glyph" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 21v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6m2 10v-2a6 6 0 0 0-2-4.5"/></svg>Clientes</button>
+      <button type="button" class="nav-item" data-page="reports"><svg class="nav-glyph" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M5 20V10m7 10V4m7 16v-7"/><path d="M3 20h18"/></svg>Relatórios</button>
+      <button type="button" class="nav-item" data-page="expenses"><svg class="nav-glyph" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M4 10h16M8 15h4"/></svg>Financeiro</button>
+    </nav>
+    <div class="nav-section-label sub-section">SISTEMA</div>
+    <nav>
+      <button type="button" class="nav-item" data-page="staff" hidden><svg class="nav-glyph" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 9v6m-3-3h6"/></svg>Equipe</button>
+            <button type="button" class="nav-item" data-page="backup"><svg class="nav-glyph" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M4 6v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6"/><path d="M3 3h18v4H3zM10 12h4"/></svg>Backup e dados</button>
+      <button type="button" class="nav-item" data-page="settings"><svg class="nav-glyph" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M12 3v2m0 14v2M4.3 7.3l1.4 1.4m12.6 6.6 1.4 1.4M3 12h2m14 0h2M4.3 16.7l1.4-1.4m12.6-6.6 1.4-1.4"/><circle cx="12" cy="12" r="4"/></svg>Configurações</button>
+          </nav>
+    <div class="sidebar-foot"><span class="connection-indicator"></span><span id="connection-label">Aguardando servidor</span><small id="device-label">Dispositivo</small><small id="account-label">Conta da loja</small><small>LH STREET · 1.2</small></div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <button type="button" class="mobile-menu" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <div class="topbar-heading"><div class="topbar-heading-row"><div><span class="eyebrow">LH STREET · STREET ADMIN</span><h1 id="page-title">Início</h1><small id="top-account" class="top-account">Minha conta</small></div></div></div>
+      <div class="top-actions"><button type="button" id="theme-toggle" class="theme-toggle" aria-label="Ativar modo claro" aria-pressed="false" title="Ativar modo claro"><span class="theme-icon" id="theme-icon" aria-hidden="true"></span><span class="theme-label" id="theme-label">Modo claro</span></button><span id="sync-state" class="sync-state">Conectando...</span><button type="button" id="sync-now" class="secondary small"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14-5L4 8M4 4v4h4M4 13a8 8 0 0 0 14 5l2-2m-4 0h4v4"/></svg> <span class="sync-button-label">Sincronizar</span></button></div>
+    </header>
+    <div id="offline-banner" class="offline-banner" role="status" aria-live="polite" hidden>
+      <div><strong id="offline-title">Conexão interrompida</strong><p id="offline-message">Seu dispositivo não alcançou o servidor. Mudanças não confirmadas continuam pendentes.</p></div>
+      <button id="offline-retry" class="secondary small" type="button">Tentar sincronizar</button>
+    </div>
+    <section id="content" class="content" aria-live="polite"><div class="page-loading">Carregando sua loja…</div></section>
+  </main>
+</div>
+<footer class="street-shell-footer" aria-label="Street Admin">
+ <span class="street-shell-footer-brand"><span><small>LH STREET · OPERAÇÕES</small></span></span>
+ <span class="street-shell-footer-caption">VENDAS · ESTOQUE · RESULTADOS</span>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+ <div class="modal"><div class="modal-head"><div><span class="eyebrow">STREET ADMIN</span><h3 id="modal-title">Novo cadastro</h3></div><button type="button" class="icon-btn" id="modal-close" aria-label="Fechar">×</button></div><form id="record-form"><div id="form-fields"></div><div class="modal-actions"><button type="button" class="secondary" id="modal-cancel">Cancelar</button><button type="submit" class="primary" id="form-save">Salvar</button></div></form></div>
+</div>
+<div class="modal-backdrop" id="confirm-modal" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+ <div class="modal small-modal"><div class="modal-head"><h3 id="confirm-title">Confirmar exclusão</h3><button type="button" class="icon-btn" id="confirm-close" aria-label="Fechar">×</button></div><p id="confirm-message" class="muted">Deseja realmente excluir este registro?</p><div class="modal-actions"><button type="button" id="confirm-cancel" class="secondary">Cancelar</button><button type="button" id="confirm-yes" class="danger-button">Excluir</button></div></div>
+</div>
+<script src="/finance.js?v=20261108mergesafe2" defer></script>
+<script src="/qrcode.js?v=1.4.4" defer></script>
+<script src="/pix.js?v=20261115-pix-equipe-mobile1" defer></script>
+<script src="/pix-ui.js?v=20261115-pix-equipe-mobile1" defer></script>
+<script src="/app.js?v=20261115-pix-equipe-mobile1" defer></script>
+<script src="/theme.js?v=20261109logo3" defer></script>
+<script src="/release-update.js?v=20261115-pix-equipe-mobile1" defer></script>
+</body>
+</html>

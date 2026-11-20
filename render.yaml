@@ -1,0 +1,29 @@
+# Render Blueprint - PostgreSQL persistente separado do Web Service.
+services:
+  - type: web
+    name: lh-street-admin
+    region: virginia
+    runtime: node
+    plan: 0.5c-512mb
+    buildCommand: npm install --omit=dev
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ALLOW_REGISTRATION
+        value: 'false'
+      - key: PGPOOL_MAX
+        value: '8'
+      - key: DATABASE_URL
+        fromDatabase:
+          name: lh-street-admin-db
+          property: connectionString
+
+databases:
+  - name: lh-street-admin-db
+    region: virginia
+    plan: 0.1c-256mb
+    databaseName: streetadmin
+    user: streetadmin

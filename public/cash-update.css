@@ -1,0 +1,71 @@
+/* Street Admin - Atualização de caixa e barra lateral (11/11/2026).
+   A lateral mantém um único cinza-escuro, independentemente do tema. */
+html[data-theme="light"] .sidebar,
+html[data-theme="dark"] .sidebar,
+.sidebar {
+ background:linear-gradient(172deg,#393b43 0%,#2d3038 100%) !important;
+ border-right:1px solid #282a31!important;
+ color:#f5f3fb!important;
+}
+.sidebar .brand strong{color:#fff!important}
+.sidebar .brand small,.sidebar .nav-section-label{color:#c7c4d0!important}
+.sidebar .nav-item{color:#e0dfea!important}
+.sidebar .nav-item:hover{background:#48434f!important;color:#fff!important}
+.sidebar .nav-item.active{
+ background:linear-gradient(95deg,rgba(157,114,255,.28),rgba(157,114,255,.12))!important;
+ color:#e9d9ff!important;border-color:transparent!important;
+ box-shadow:inset 3px 0 0 #b28cff!important;
+}
+.sidebar .nav-item.active .nav-glyph{color:#d7bdff!important}
+.sidebar .sidebar-foot{background:#33343e!important;border-color:#54515f!important;color:#e0dae7!important}
+.sidebar .sidebar-foot small{color:#c9c4d3!important}
+.sidebar .sidebar-close{color:#fff!important;background:#4b4d58!important;border-color:#636371!important}
+/* Controle de caixa: compacto, responsivo e consistente com os cards existentes. */
+.cash-session{margin:0 0 21px;padding:22px!important;display:grid;gap:15px}
+.cash-session-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.cash-session-head h3{font-size:19px;margin:6px 0}
+.cash-session-head p,.cash-session-open p,.cash-session-footnote{color:var(--muted);font-size:12px;line-height:1.6;margin:4px 0}
+.cash-session-open{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,370px);gap:18px;align-items:start}
+.cash-session-open strong{font-size:15px}
+.cash-session-form{display:grid;gap:8px;min-width:0}
+.cash-session-form label{font-size:12px;font-weight:700;color:var(--text)}
+.cash-session-form input{width:100%;min-width:0;padding:11px 13px;background:var(--input);color:var(--text);border:1px solid var(--field-border);border-radius:10px}
+.cash-session-form input:focus{outline:2px solid var(--violet);outline-offset:1px}
+.cash-session-actions{display:flex;gap:9px;align-items:center}
+.cash-session-actions input{flex:1 1 150px;max-width:240px}
+.cash-session-actions button{flex:none;white-space:nowrap}
+.cash-session-form small{color:var(--muted);font-size:11px;line-height:1.5}
+.cash-session-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.cash-session-line{border-radius:12px;background:var(--panel-alt);border:1px solid var(--line);padding:13px 15px;display:flex;flex-direction:column;gap:6px}
+.cash-session-line span{font-size:11px;color:var(--muted);line-height:1.4}
+.cash-session-line strong{font-size:19px;letter-spacing:-.025em;font-variant-numeric:tabular-nums}
+.cash-session-emphasis{background:var(--violet-weak);border-color:rgba(149,103,255,.35)}
+.cash-session-emphasis strong{color:var(--accent)}
+.cash-session-meta{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:11px;color:var(--muted)}
+.cash-session-meta .text-button{padding:5px 0}
+.cash-edit-form{border:1px solid var(--line);border-radius:11px;background:var(--panel-alt);padding:13px}
+.cash-session-close{border:1px solid var(--line);border-radius:12px;background:var(--panel-alt);padding:13px 15px}
+.cash-session-close summary{font-weight:800;color:var(--accent);cursor:pointer;font-size:13px}
+.cash-session-close[open] summary{margin-bottom:13px}
+.cash-session-close form{max-width:550px}
+.cash-session-close p{color:var(--muted);font-size:12px;line-height:1.5;margin:0 0 8px}
+.cash-session-closed{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;background:var(--panel-alt);border-radius:12px;border:1px solid var(--line);padding:14px}
+.cash-session-status{grid-column:1/-1;color:var(--accent);font-weight:800;font-size:12px}
+.cash-session-closed .cash-session-line{background:var(--panel)}
+.cash-session-closed>small{grid-column:1/-1;color:var(--muted);line-height:1.5}
+.cash-session-warning{background:#a93d4117;color:#da686d;padding:10px 12px;border-radius:10px;border:1px solid #a93d4140}
+.cash-session-footnote{margin:0;padding-top:9px;border-top:1px solid var(--line)}
+.cash-report table{min-width:650px}
+@media(max-width:900px){.cash-session-open{grid-template-columns:1fr}}
+@media(max-width:600px){
+ .cash-session{padding:16px!important}
+ .cash-session-head h3{font-size:17px}
+ .cash-session-metrics{grid-template-columns:1fr}
+ .cash-session-line{padding:12px}
+ .cash-session-actions{flex-wrap:wrap}
+ .cash-session-actions input{max-width:none;flex:1 1 100%}
+ .cash-session-actions button{width:100%}
+ .cash-session-closed{grid-template-columns:1fr}
+ .cash-session-meta{align-items:flex-start;flex-direction:column}
+}
+.cash-edit-form[hidden]{display:none!important}
